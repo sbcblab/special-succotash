@@ -1,4 +1,51 @@
-<h1>hello!</h1>
+<!DOCTYPE html>
+<html>
+
+
+<style>
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column a {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+
+figure {
+    border: 0.5px solid #d7d7d7;
+    margin-bottom: 30px;
+    margin-left: 4px;
+    display: inline-block;
+}
+
+
+</style>
+
+<body>
+<h1>Visualization of Feature Scoring Algorithms with t-SNE</h1>
+
+<p> Click on the plots to open the interactive version! </p>
+
+<h3>Regression dataset</h3>
+
+<div class="row">
+  <div class="column">
+    <a title="Regression - no scoring" href="./REGRESSION/regression_4in100_1000_tsne2d.html"> 
+      <figure>
+        <img alt="Regression - no scoring" src="./PDFs/regression/regression_4in100_1000_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" height="300">
+        <figcaption>No feature importance</figcaption>
+      </figure>
+    </a>
 
     <a title="Regression - neural network" href="./REGRESSION/RelAgg_regression_tsne2d.html"> 
       <figure>
@@ -6,3 +53,391 @@
       <figcaption>Feature importance as learned by a neural network</figcaption>
       </figure>
     </a>
+  </div>
+</div>
+
+<p><b>Figure 1: Comparison between the visualization using weighted t-SNE of a synthetic regression dataset before and after considering the feature importance as learned by a neural network.</b> Each figure is the visualization of the 2D embedding of a regression dataset (negative values in blue, positive values in red) composed mostly of irrelevant features. On the left, there is the regular visualization, in which the samples are mixed. On the right, it is possible to visualize how the feature importance learned by a neural network disentangle the samples.</p>
+
+<h3>XOR dataset</h3>
+
+<div class="row">
+
+  <div class="column">
+    <a title="XOR - no scoring" href="./XOR/xor_500samples_50features_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - no scoring" src="./PDFs/xor/0xor_500samples_50features_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>No scoring</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - Kruskal-Wallis" href="./XOR/KruskallWallisFilter_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Kruskal-Wallis" src="./PDFs/xor/KruskallWallisFilter_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Kruskal-Wallis</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - Mutual Information" href="./XOR/MutualInformationFilter_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Mutual Information" src="./PDFs/xor/MutualInformationFilter_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Mutual Information </figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - mRMR" href="./XOR/MRMR_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - mRMR" src="./PDFs/xor/MRMR_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>mRMR</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - ReliefF " href="./XOR/ReliefFFeatureSelector_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - ReliefF " src="./PDFs/xor/ReliefFFeatureSelector_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>ReliefF</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+  <div class="column">
+    <a title="XOR - Lasso" href="./XOR/Lasso_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Lasso" src="./PDFs/xor/Lasso_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Lasso</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - Decision Tree" href="./XOR/DecisionTree_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Decision Tree" src="./PDFs/xor/DecisionTree_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Decision Tree</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - Random Forest" href="./XOR/RandomForest_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Random Forest" src="./PDFs/xor/RandomForest_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Random Forest</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - Linear SVM" href="./XOR/LinearSVM_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Linear SVM" src="./PDFs/xor/LinearSVM_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Linear SVM</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - Neural Network" href="./XOR/RelAgg_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Neural Network" src="./PDFs/xor/RelAgg_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Neural Network</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+</div>
+
+<p><b>Figure 2: Weighted t-SNE visualization for the XOR dataset.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for each of the nine feature scorers, plus the original data in ``no scoring.'' Each red or blue point represents one sample from one of the two classes. The color legend is shown in \autoref{fig:wtsnexornoselection} and omitted in the other figures.</p>
+
+<h3>Synthetic dataset</h3>
+
+<div class="row">
+
+  <div class="column">
+    <a title="Synth - no scoring" href="./SYNTH/synth_100samples_5000features_50informative_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - no scoring" src="./PDFs/synth/0synth_100samples_5000features_50informative_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>No scoring</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - Kruskal-Wallis" href="./SYNTH/KruskallWallisFilter_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Kruskal-Wallis" src="./PDFs/synth/KruskallWallisFilter_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Kruskal-Wallis</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - Mutual Information" href="./SYNTH/MutualInformationFilter_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Mutual Information" src="./PDFs/synth/MutualInformationFilter_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Mutual Information </figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - mRMR" href="./SYNTH/MRMR_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - mRMR" src="./PDFs/synth/MRMR_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>mRMR</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - ReliefF " href="./SYNTH/ReliefFFeatureSelector_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - ReliefF " src="./PDFs/synth/ReliefFFeatureSelector_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>ReliefF</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+  <div class="column">
+    <a title="Synth - Lasso" href="./SYNTH/Lasso_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Lasso" src="./PDFs/synth/Lasso_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Lasso</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - Decision Tree" href="./SYNTH/DecisionTree_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Decision Tree" src="./PDFs/synth/DecisionTree_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Decision Tree</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - Random Forest" href="./SYNTH/RandomForest_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Random Forest" src="./PDFs/synth/RandomForest_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Random Forest</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - Linear SVM" href="./SYNTH/LinearSVM_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Linear SVM" src="./PDFs/synth/LinearSVM_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Linear SVM</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - Neural Network" href="./SYNTH/RelAgg_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Neural Network" src="./PDFs/synth/RelAgg_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Neural Network</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+</div>
+
+<p><b>Figure 3: Weighted t-SNE visualization for the synthetic 2-classes dataset.</b> Figure details as in Figure 2.</p>
+
+<h3>Liver cancer dataset</h3>
+
+<div class="row">
+
+  <div class="column">
+    <a title="Liver - no scoring" href="./LIVER/Liver_GSE22405_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - no scoring" src="./PDFs/liver/0Liver_GSE22405_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>No scoring</figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - Kruskal-Wallis" href="./LIVER/KruskallWallisFilter_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - Kruskal-Wallis" src="./PDFs/liver/KruskallWallisFilter_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Kruskal-Wallis</figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - Mutual Information" href="./LIVER/MutualInformationFilter_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - Mutual Information" src="./PDFs/liver/MutualInformationFilter_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Mutual Information </figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - mRMR" href="./LIVER/MRMR_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - mRMR" src="./PDFs/liver/MRMR_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>mRMR</figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - ReliefF " href="./LIVER/ReliefFFeatureSelector_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - ReliefF " src="./PDFs/liver/ReliefFFeatureSelector_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>ReliefF</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+  <div class="column">
+    <a title="Liver - Lasso" href="./LIVER/Lasso_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - Lasso" src="./PDFs/liver/Lasso_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Lasso</figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - Decision Tree" href="./LIVER/DecisionTree_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - Decision Tree" src="./PDFs/liver/DecisionTree_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Decision Tree</figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - Random Forest" href="./LIVER/RandomForest_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - Random Forest" src="./PDFs/liver/RandomForest_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Random Forest</figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - Linear SVM" href="./LIVER/LinearSVM_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - Linear SVM" src="./PDFs/liver/LinearSVM_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Linear SVM</figcaption>
+      </figure>
+    </a>
+
+    <a title="Liver - Neural Network" href="./LIVER/RelAgg_Liver_tsne2d.html"> 
+      <figure>
+        <img alt="Liver - Neural Network" src="./PDFs/liver/RelAgg_Liver_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Neural Network</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+</div>
+
+<p><b>Figure 4: Weighted t-SNE visualization for the liver cancer dataset.</b> Figure details as in Figure 2.</p>
+
+<h3>Prostate cancer dataset</h3>
+
+<div class="row">
+
+  <div class="column">
+    <a title="Prostate - no scoring" href="./PROSTATE/Prostate_GSE6919_U95C_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - no scoring" src="./PDFs/prostate/0Prostate_GSE6919_U95C_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>No scoring</figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - Kruskal-Wallis" href="./PROSTATE/KruskallWallisFilter_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - Kruskal-Wallis" src="./PDFs/prostate/KruskallWallisFilter_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Kruskal-Wallis</figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - Mutual Information" href="./PROSTATE/MutualInformationFilter_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - Mutual Information" src="./PDFs/prostate/MutualInformationFilter_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Mutual Information </figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - mRMR" href="./PROSTATE/MRMR_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - mRMR" src="./PDFs/prostate/MRMR_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>mRMR</figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - ReliefF " href="./PROSTATE/ReliefFFeatureSelector_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - ReliefF " src="./PDFs/prostate/ReliefFFeatureSelector_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>ReliefF</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+  <div class="column">
+    <a title="Prostate - Lasso" href="./PROSTATE/Lasso_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - Lasso" src="./PDFs/prostate/Lasso_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Lasso</figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - Decision Tree" href="./PROSTATE/DecisionTree_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - Decision Tree" src="./PDFs/prostate/DecisionTree_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Decision Tree</figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - Random Forest" href="./PROSTATE/RandomForest_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - Random Forest" src="./PDFs/prostate/RandomForest_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Random Forest</figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - Linear SVM" href="./PROSTATE/LinearSVM_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - Linear SVM" src="./PDFs/prostate/LinearSVM_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Linear SVM</figcaption>
+      </figure>
+    </a>
+
+    <a title="Prostate - Neural Network" href="./PROSTATE/RelAgg_Prostate_tsne2d.html"> 
+      <figure>
+        <img alt="Prostate - Neural Network" src="./PDFs/prostate/RelAgg_Prostate_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Neural Network</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+</div>
+
+<p><b>Figure 5: Weighted t-SNE visualization for the prostate cancer dataset.</b> Figure details as in Figure 2.</p>
+
+<h3>Feature selection</h3>
+
+<div class="row">
+  <div class="column">
+    <a title="Synth - Kruskal-Wallis" href="./SYNTH/KruskallWallisFilter_Synth_A_tsne2d.html"> 
+      <figure>
+        <img alt="Synth - Kruskal-Wallis" src="./PDFs/synth/KruskallWallisFilter_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" height="300">
+        <figcaption>Kruskal-Wallis</figcaption>
+      </figure>
+    </a>
+
+    <a title="Synth - “Perfect” selection" href="./KWxFS/Perfect_Synth_A_tsne2d.html"> 
+      <figure>
+      <img alt="Synth - “Perfect” selection" src="./PDFs/synth/Perfect_Synth_A_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" height="300"> 
+      <figcaption>“Perfect” selection</figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+
+<p><b>Figure 6: Comparison between the Kruskal-Wallis Filter and a “perfect” selection.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for the results of Kruskal-Wallis Filter and a “perfect” selection. This visualization refers to the synthetic dataset with 5000 features, in which only 50 are relevant. The “perfect” solution weights all relevant features with a score of one and all noisy features with a score of zero. Details as in Figure 3.</p>
+
+<h3>Neural network layer activation</h3>
+
+<div class="row">
+  <div class="column">
+    <a title="XOR - Weighted t-SNE " href="./XOR/RelAgg_xor_tsne2d.html"> 
+      <figure>
+        <img alt="XOR - Weighted t-SNE" src="./PDFs/xor/RelAgg_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Weighted t-SNE</figcaption>
+      </figure>
+    </a>
+
+    <a title="XOR - Activation of last layer neurons" href="./wTSNExNN/xoract_act2d.html"> 
+      <figure>
+      <img alt="XOR - Activation of last layer neurons" src="./PDFs/xoract_act2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" height="300"> 
+      <figcaption>Activation of last layer neurons</figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+
+<p><b>Figure 7: Comparison between the weighted t-SNE and the activation of the neurons in the last layer of a neural network.</b> Visualization of the XOR dataset with details as in Fig. 2. On the left is the same weighted t-SNE presented in Fig. 2j, and on the right is the neurons’ activation of the last layer (before the softmax function) of the same neural network. Because this layer only has two neurons, the activation of the first neuron is on the x-axis and the activation of the second neuron is on the y-axis.</p>
+
+</body>
+
+</html>
