@@ -34,6 +34,22 @@ figure {
 <body>
 <h1>Visualization of Feature Scoring Algorithms with t-SNE</h1>
 
+<p>While vast literature on high-dimensional data visualization is available, there are not many works regarding the visualization of feature scorers and their results. 
+Feature scorers are algorithms that assign numerical importance to each feature of multi-dimensional datasets.
+These importance scores can be used in several applications, such as feature selection, knowledge discovery, and machine learning interpretability.
+There are several feature scorers to choose from, and often no single metric or ground truth is available to guarantee the quality of their results.
+In this scenario, visualization can become valuable to support the decision of which method to choose and how good its results are.
+For this goal, this work expands the t-SNE algorithm presenting the "weighted t-SNE."
+It modifies the relationship between data points in the embedded 2D space to reflect the importance of each dimension of the original datasets as assessed by a feature scorer.
+This research discusses how to implement weighted t-SNE, proposes the silhouette coefficient as a numerical evaluation of the results, and shows several examples of its use in practice.
+Synthetic and real-world tabular datasets are used in the experiments together with nine feature scorers, ranging from Mutual Information to neural networks. 
+Each feature scorer produces unique visualizations, and weighted t-SNE can be used to compare and choose the one that better suits a given dataset and task.
+Weighted t-SNE can also visually express the importance of features learned by machine learning models and help us see how they are sorting the data, increasing interpretability.</p>
+
+<p> <b>Read the scientific paper:</b> <a href="https://github.com/sbcblab/weighted_tSNE"> https://github.com/sbcblab/weighted_tSNE </a> </p>
+
+<p> <b>Access data and code:</b> <a href="https://github.com/sbcblab/weighted_tSNE"> https://github.com/sbcblab/weighted_tSNE </a> </p>
+
 <p> Click on the plots to open the interactive version! </p>
 
 <h3>Regression dataset</h3>
@@ -129,7 +145,7 @@ figure {
       </figure>
     </a>
 
-    <a title="XOR - Neural Network" href="./XOR/RelAgg_xor_tsne2d.html"> 
+    <a title="XOR - Neural Network" href="./XOR/RelAgg_0150_score_xor_2in50_500_tsne2d.html"> 
       <figure>
         <img alt="XOR - Neural Network" src="./PDFs/xor/RelAgg_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
         <figcaption>Neural Network</figcaption>
@@ -140,7 +156,7 @@ figure {
 
 </div>
 
-<p><b>Figure 2: Weighted t-SNE visualization for the XOR dataset.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for each of the nine feature scorers, plus the original data in ``no scoring.'' Each red or blue point represents one sample from one of the two classes. The color legend is shown in Figure XOR - no scoring and omitted in the other figures.</p>
+<p><b>Figure 2: Weighted t-SNE visualization for the XOR dataset.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for each of the nine feature scorers, plus the original data in "no scoring." Each red or blue point represents one sample from one of the two classes. The color legend is shown in the first subfigure and omitted in the other subfigures.</p>
 
 <h3>Synthetic dataset</h3>
 
@@ -416,11 +432,54 @@ figure {
 
 <p><b>Figure 6: Comparison between the Kruskal-Wallis Filter and a “perfect” selection.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for the results of Kruskal-Wallis Filter and a “perfect” selection. This visualization refers to the synthetic dataset with 5000 features, in which only 50 are relevant. The “perfect” solution weights all relevant features with a score of one and all noisy features with a score of zero. Details as in Figure 3.</p>
 
+<h3>Mouse cortex dataset</h3>
+
+<div class="row">
+
+  <div class="column">
+    <a title="Mouse cortex - no scoring" href="./MOUSE/tasic_filt_tsne2d.html"> 
+      <figure>
+        <img alt="Mouse cortex - no scoring" src="./PDFs/mouse/tasic_filt_tsne2d-2.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>No scoring</figcaption>
+      </figure>
+    </a>
+
+    <a title="Mouse cortex - Lasso" href="./MOUSE/Lasso_score_tasic_filt_tsne2d.html"> 
+      <figure>
+        <img alt="Mouse cortex - Lasso" src="./PDFs/mouse/Lasso_score_tasic_filt_tsne2d-2.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Lasso</figcaption>
+      </figure>
+    </a>
+
+
+  </div>
+
+  <div class="column">
+    <a title="Mouse cortex - Random Forest" href="./MOUSE/RF_score_tasic_filt_tsne2d.html"> 
+      <figure>
+        <img alt="Mouse cortex - Random Forest" src="./PDFs/mouse/RF_score_tasic_filt_tsne2d-1.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Random Forest</figcaption>
+      </figure>
+    </a>
+
+    <a title="Mouse cortex - Neural Network" href="./MOUSE/RelAgg_0010_score_tasic_filt_tsne2d.html"> 
+      <figure>
+        <img alt="Mouse cortex - Neural Network" src="./PDFs/mouse/RelAgg_0010_score_tasic_filt_tsne2d-2.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
+        <figcaption>Neural Network</figcaption>
+      </figure>
+    </a>
+
+  </div>
+
+</div>
+
+<p><b>Figure 7: Weighted t-SNE visualization for the mouse cortex dataset.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for three machine learning models, plus the original data in "no scoring." Each color corresponds to a different class. Following the scheme from Kobak and Berens (2019), warm colours correspond to inhibitory neurons, cold colours correspond to excitatory neurons, and brown or grey colours correspond to non-neural cells.</p>
+
 <h3>Neural network layer activation</h3>
 
 <div class="row">
   <div class="column">
-    <a title="XOR - Weighted t-SNE " href="./XOR/RelAgg_xor_tsne2d.html"> 
+    <a title="XOR - Weighted t-SNE " href="./XOR/RelAgg_0150_score_xor_2in50_500_tsne2d.html"> 
       <figure>
         <img alt="XOR - Weighted t-SNE" src="./PDFs/xor/RelAgg_xor_tsne2d.jpg?auto=compress&cs=tinysrgb&dpr=1&w=200" height="300">
         <figcaption>Weighted t-SNE</figcaption>
@@ -436,7 +495,25 @@ figure {
   </div>
 </div>
 
-<p><b>Figure 7: Comparison between the weighted t-SNE and the activation of the neurons in the last layer of a neural network.</b> Visualization of the XOR dataset with details as in Fig. 2. On the left is the same weighted t-SNE presented in Fig. 2j, and on the right is the neurons’ activation of the last layer (before the softmax function) of the same neural network. Because this layer only has two neurons, the activation of the first neuron is on the x-axis and the activation of the second neuron is on the y-axis.</p>
+<p><b>Figure 8: Comparison between the weighted t-SNE and the activation of the neurons in the last layer of a neural network.</b> Visualization of the XOR dataset with details as in Fig. 2. On the left is the same weighted t-SNE presented in Fig. 2j, and on the right is the neurons’ activation of the last layer (before the softmax function) of the same neural network. Because this layer only has two neurons, the activation of the first neuron is on the x-axis and the activation of the second neuron is on the y-axis.</p>
+
+<h3>Animations of neural network learning visualized with weighted t-SNE</h3>
+
+  <a title="XOR animation - Weighted t-SNE" href="movie.gif"> 
+    <figure>
+      <img alt="XOR - Weighted t-SNE" src="movie.gif" height="300">
+      <figcaption>Weighted t-SNE visualization of neural network learning - XOR dataset</figcaption>
+    </figure>
+  </a>
+
+  <a title="Mouse cortex animation - Weighted t-SNE" href="tasic.gif"> 
+    <figure>
+      <img alt="Mouse cortex animation - Weighted t-SNE" src="tasic.gif" height="300">
+      <figcaption>Weighted t-SNE animation of neural network learning - Mouse cortex dataset</figcaption>
+    </figure>
+  </a>
+
+<p>© <a href="https://brunogrisci.github.io">Bruno Iochins Grisci</a>. All rights reserved.</p>
 
 </body>
 
