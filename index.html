@@ -32,20 +32,8 @@ figure {
 </style>
 
 <body>
-<!-- <h1>Visualization of Feature Scoring Algorithms with Weighted t-SNE</h1> -->
 <h1>Weighted t-SNE</h1>
 
-<!-- <p>While vast literature on high-dimensional data visualization is available, there are not many works regarding the visualization of feature scorers and their results. 
-Feature scorers are algorithms that assign numerical importance to each feature of multi-dimensional datasets.
-These importance scores can be used in several applications, such as feature selection, knowledge discovery, and machine learning interpretability.
-There are several feature scorers to choose from, and often no single metric or ground truth is available to guarantee the quality of their results.
-In this scenario, visualization can become valuable to support the decision of which method to choose and how good its results are.
-For this goal, this work expands the t-SNE algorithm presenting the "weighted t-SNE."
-It modifies the relationship between data points in the embedded 2D space to reflect the importance of each dimension of the original datasets as assessed by a feature scorer.
-This research discusses how to implement weighted t-SNE, proposes the silhouette coefficient as a numerical evaluation of the results, and shows several examples of its use in practice.
-Synthetic and real-world tabular datasets are used in the experiments together with nine feature scorers, ranging from Mutual Information to neural networks. 
-Each feature scorer produces unique visualizations, and weighted t-SNE can be used to compare and choose the one that better suits a given dataset and task.
-Weighted t-SNE can also visually express the importance of features learned by machine learning models and help us see how they are sorting the data, increasing interpretability.</p> -->
 
 <p> <b>Read the scientific paper:</b> <a href="https://github.com/sbcblab/weighted_tSNE"> https://github.com/sbcblab/weighted_tSNE </a> </p>
 
@@ -73,7 +61,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
   </div>
 </div>
 
-<!--<p><b>Figure 1: Comparison between the visualization using weighted t-SNE of a synthetic regression dataset before and after considering the feature importance as learned by a neural network.</b> Each figure is the visualization of the 2D embedding of a regression dataset (negative values in blue, positive values in red) composed mostly of irrelevant features. On the left, there is the regular visualization, in which the samples are mixed. On the right, it is possible to visualize how the feature importance learned by a neural network disentangle the samples.</p> -->
 
 <h3>XOR dataset</h3>
 
@@ -157,8 +144,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
 
 </div>
 
-<!-- <p><b>Figure 2: Weighted t-SNE visualization for the XOR dataset.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for each of the nine feature scorers, plus the original data in "no scoring." Each red or blue point represents one sample from one of the two classes. The color legend is shown in the first subfigure and omitted in the other subfigures.</p> -->
-
 <h3>Synthetic dataset</h3>
 
 <div class="row">
@@ -240,8 +225,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
   </div>
 
 </div>
-
-<!-- <p><b>Figure 3: Weighted t-SNE visualization for the synthetic 2-classes dataset.</b> Figure details as in Figure 2.</p> -->
 
 <h3>Liver cancer dataset</h3>
 
@@ -325,8 +308,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
 
 </div>
 
-<!-- <p><b>Figure 4: Weighted t-SNE visualization for the liver cancer dataset.</b> Figure details as in Figure 2.</p> -->
-
 <h3>Prostate cancer dataset</h3>
 
 <div class="row">
@@ -409,8 +390,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
 
 </div>
 
-<!-- <p><b>Figure 5: Weighted t-SNE visualization for the prostate cancer dataset.</b> Figure details as in Figure 2.</p> -->
-
 <h3>Feature selection</h3>
 
 <div class="row">
@@ -430,8 +409,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
     </a>
   </div>
 </div>
-
-<!-- <p><b>Figure 6: Comparison between the Kruskal-Wallis Filter and a “perfect” selection.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for the results of Kruskal-Wallis Filter and a “perfect” selection. This visualization refers to the synthetic dataset with 5000 features, in which only 50 are relevant. The “perfect” solution weights all relevant features with a score of one and all noisy features with a score of zero. Details as in Figure 3.</p> -->
 
 <h3>Mouse cortex dataset</h3>
 
@@ -474,8 +451,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
 
 </div>
 
-<!-- <p><b>Figure 7: Weighted t-SNE visualization for the mouse cortex dataset.</b> Each figure is the visualization of the 2D embedding with weighted t-SNE for three machine learning models, plus the original data in "no scoring." Each color corresponds to a different class. Following the scheme from Kobak and Berens (2019), warm colours correspond to inhibitory neurons, cold colours correspond to excitatory neurons, and brown or grey colours correspond to non-neural cells.</p> -->
-
 <h3>Neural network layer activation</h3>
 
 <div class="row">
@@ -495,8 +470,6 @@ Weighted t-SNE can also visually express the importance of features learned by m
     </a>
   </div>
 </div>
-
-<!-- <p><b>Figure 8: Comparison between the weighted t-SNE and the activation of the neurons in the last layer of a neural network.</b> Visualization of the XOR dataset with details as in Fig. 2. On the left is the same weighted t-SNE presented in Fig. 2j, and on the right is the neurons’ activation of the last layer (before the softmax function) of the same neural network. Because this layer only has two neurons, the activation of the first neuron is on the x-axis and the activation of the second neuron is on the y-axis.</p> -->
 
 <h3>Animations of neural network learning visualized with weighted t-SNE</h3>
 
